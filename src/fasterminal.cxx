@@ -1,7 +1,12 @@
-#include <windows.h>
+#define WINVER 0x0601
+#include <cstdio>
 #include <iostream>
+#include "comdef.h"
+#include "windows.h"
 #include <functional>
 #include <cstdlib>
+const long altKeyComb = MOD_ALT | MOD_WIN; // Choose from MOD_ALT, MOD_CONTROL, MOD_WIN, and MOD_SHIFT. Use an OR binary operator to combine keys.
+const long realKey = VK_RETURN; // Only one key code allowed, e.g. VK_RETURN.
 using namespace std;
 void GetDesktopResolution(int& horizontal, int& vertical)
 {
@@ -66,7 +71,7 @@ int main () {
   auto hd = FindWindowA("CASCADIA_HOSTING_WINDOW_CLASS", nullptr);
   cout << hd << endl;
   RECT rec;
-  auto err = RegisterHotKey(NULL, 0, MOD_NOREPEAT | MOD_ALT | MOD_WIN, VK_RETURN);
+  auto err = RegisterHotKey(NULL, 0, MOD_NOREPEAT | altKeyComb, realKey);
   if (!err) {
     cout << GetLastErrorAsString() << endl;
     exit(1);

@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.16)
+project(fasterminal)
+
+set(CMAKE_CXX_STANDARD 14)
+
+SET (EXECUTABLE_OUTPUT_PATH "${PROJECT_SOURCE_DIR}/bin")
+
+AUX_SOURCE_DIRECTORY (src DIR_SRCS)
+INCLUDE_DIRECTORIES("${PROJECT_SOURCE_DIR}/include")
+
+add_executable(a ${DIR_SRCS})
