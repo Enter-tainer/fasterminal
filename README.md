@@ -1,6 +1,8 @@
 # fasterminal
 a deadly simple utility to toggle windows terminal using Alt+Win+Enter by default.
 
+![screenshot](./images/screenshot.webp)
+
 ## Usage
 
 Compile `src/fastermial.cxx`, and run it. Try `Alt+Win+Enter`.
